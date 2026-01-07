@@ -1,0 +1,148 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to exact vintage palette from reference image */
+  /* Lavender background, olive/tan header, cream cards, warm brown accents */
+  --background: #c9c4de;
+  --foreground: #3d3d3d;
+  --card: #f5f1e8;
+  --card-foreground: #3d3d3d;
+  --popover: #f5f1e8;
+  --popover-foreground: #3d3d3d;
+  --primary: #7a8a5e;
+  --primary-foreground: #f5f1e8;
+  --secondary: #d4c9c1;
+  --secondary-foreground: #3d3d3d;
+  --muted: #a89f96;
+  --muted-foreground: #6a6a6a;
+  --accent: #9d7d6a;
+  --accent-foreground: #f5f1e8;
+  --destructive: #c97070;
+  --destructive-foreground: #f5f1e8;
+  --border: #e0d9ce;
+  --input: #f5f1e8;
+  --ring: #7a8a5e;
+  --chart-1: #7a8a5e;
+  --chart-2: #9d7d6a;
+  --chart-3: #a89f96;
+  --chart-4: #9a9a9a;
+  --chart-5: #c97070;
+  --radius: 1rem;
+  --sidebar: #f5f1e8;
+  --sidebar-foreground: #3d3d3d;
+  --sidebar-primary: #7a8a5e;
+  --sidebar-primary-foreground: #f5f1e8;
+  --sidebar-accent: #9d7d6a;
+  --sidebar-accent-foreground: #f5f1e8;
+  --sidebar-border: #e0d9ce;
+  --sidebar-ring: #7a8a5e;
+}
+
+.dark {
+  --background: #3a3a3a;
+  --foreground: #e8e4df;
+  --card: #4a4a4a;
+  --card-foreground: #e8e4df;
+  --popover: #4a4a4a;
+  --popover-foreground: #e8e4df;
+  --primary: #9aaa7e;
+  --primary-foreground: #3a3a3a;
+  --secondary: #5a5a5a;
+  --secondary-foreground: #e8e4df;
+  --muted: #6a6a6a;
+  --muted-foreground: #b0b0b0;
+  --accent: #bda584;
+  --accent-foreground: #3a3a3a;
+  --destructive: #e89090;
+  --destructive-foreground: #3a3a3a;
+  --border: #5a5a5a;
+  --input: #4a4a4a;
+  --ring: #9aaa7e;
+  --chart-1: #9aaa7e;
+  --chart-2: #bda584;
+  --chart-3: #b0b0b0;
+  --chart-4: #a8a8a8;
+  --chart-5: #e89090;
+  --sidebar: #4a4a4a;
+  --sidebar-foreground: #e8e4df;
+  --sidebar-primary: #9aaa7e;
+  --sidebar-primary-foreground: #3a3a3a;
+  --sidebar-accent: #bda584;
+  --sidebar-accent-foreground: #3a3a3a;
+  --sidebar-border: #5a5a5a;
+  --sidebar-ring: #9aaa7e;
+}
+
+@theme inline {
+  --font-sans: "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Added vintage striped header pattern */
+  .header-striped {
+    background: repeating-linear-gradient(90deg, #c9c4de 0px, #c9c4de 4px, #e0d9ce 4px, #e0d9ce 8px);
+  }
+
+  .vintage-card {
+    @apply bg-card border border-border rounded-3xl shadow-sm hover:shadow-md transition-shadow;
+  }
+
+  /* Enhanced project card with vintage styling */
+  .project-card {
+    @apply relative overflow-hidden rounded-3xl bg-card border-2 border-border shadow-md transition-all duration-300 hover:shadow-lg cursor-pointer h-64 flex flex-col justify-between p-6;
+  }
+
+  /* Overlay for GitHub link on hover */
+  .project-overlay {
+    @apply absolute inset-0 bg-accent/95 backdrop-blur-sm flex flex-col items-center justify-center gap-4 opacity-0 hover:opacity-100 transition-opacity duration-300;
+  }
+}
