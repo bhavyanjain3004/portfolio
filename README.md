@@ -1,8 +1,3 @@
-# Portfolio redesign
-
-*Automatically synced with your [v0.app](https://v0.app) deployments*
-
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/bhavyajain3004-2524s-projects/v0-portfolio-redesign)
 
 ## Overview
 
@@ -11,19 +6,7 @@ Any changes you make to your deployed app will be automatically pushed to this r
 
 ## Deployment
 
-Your project is live at:
+protfolio is live at:
 
 *([https://vercel.com/bhavyajain3004-2524s-projects/v0-portfolio-redesign](https://v0-portfolio-redesign-ruddy.vercel.app/))**
 
-## Build your app
-
-Continue building your app on:
-
-**[https://v0.app/chat/t19wG0FQDrK](https://v0.app/chat/t19wG0FQDrK)**
-
-## How It Works
-
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
